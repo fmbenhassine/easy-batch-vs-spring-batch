@@ -3,30 +3,19 @@
        xsi:schemaLocation="http://www.springframework.org/schema/batch http://www.springframework.org/schema/batch/spring-batch-2.2.xsd
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd ">
 
+    <bean id="transactionManager" class="org.springframework.batch.support.transaction.ResourcelessTransactionManager"/>
+
     <bean id="jobRepository" class="org.springframework.batch.core.repository.support.MapJobRepositoryFactoryBean">
         <property name="transactionManager" ref="transactionManager"/>
     </bean>
-
-    <bean id="transactionManager" class="org.springframework.batch.support.transaction.ResourcelessTransactionManager"/>
 
     <bean id="jobLauncher" class="org.springframework.batch.core.launch.support.SimpleJobLauncher">
         <property name="jobRepository" ref="jobRepository"/>
     </bean>
 
     <bean id="greeting" class="common.Greeting" scope="prototype"/>
-    <bean id="itemProcessor" class="springbatch.GreetingProcessor"/>
 
-    <batch:job id="helloWorldJob">
-        <batch:step id="step1">
-            <batch:tasklet>
-                <batch:chunk reader="cvsFileItemReader" writer="greetingWriter" processor="itemProcessor" commit-interval="10"/>
-            </batch:tasklet>
-        </batch:step>
-    </batch:job>
-
-    <bean id="greetingWriter" class="springbatch.GreetingWriter"/>
-
-    <bean id="cvsFileItemReader" class="org.springframework.batch.item.file.FlatFileItemReader">
+    <bean id="greetingReader" class="org.springframework.batch.item.file.FlatFileItemReader">
         <property name="resource" value="classpath:greetings.csv"/>
         <property name="lineMapper">
             <bean class="org.springframework.batch.item.file.mapping.DefaultLineMapper">
@@ -43,5 +32,17 @@
             </bean>
         </property>
     </bean>
+
+    <bean id="greetingProcessor" class="springbatch.GreetingProcessor"/>
+
+    <bean id="greetingWriter" class="springbatch.GreetingWriter"/>
+
+    <batch:job id="helloWorldJob">
+        <batch:step id="step1">
+            <batch:tasklet>
+                <batch:chunk reader="greetingReader" writer="greetingWriter" processor="greetingProcessor" commit-interval="10"/>
+            </batch:tasklet>
+        </batch:step>
+    </batch:job>
 
 </beans>
