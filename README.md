@@ -1,3 +1,1 @@
-This is the source code for the following post: [http://wp.me/p4ccLE-1O][post]
-
-[post]: http://wp.me/p4ccLE-1O
+This is the source code for the following [post](http://blog.mahmoud-benhassine.fr/2014/03/03/spring-batch-vs-easy-batch:-a-hello-world-comparison.html)
