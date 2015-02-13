@@ -7,9 +7,9 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
- * Spring Batch launcher.
+ * Spring Batch hellow world launcher.
  */
-public class SpringBatchLauncher {
+public class SpringBatchHelloWorldLauncher {
 
     public static void main(String[] args) throws Exception {
 

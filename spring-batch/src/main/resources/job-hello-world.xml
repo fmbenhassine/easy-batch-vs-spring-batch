@@ -13,34 +13,35 @@
         <property name="jobRepository" ref="jobRepository"/>
     </bean>
 
-    <bean id="greeting" class="common.Greeting" scope="prototype"/>
+    <bean id="tweet" class="common.Tweet" scope="prototype"/>
 
-    <bean id="greetingReader" class="org.springframework.batch.item.file.FlatFileItemReader">
-        <property name="resource" value="classpath:greetings.csv"/>
+    <bean id="tweetReader" class="org.springframework.batch.item.file.FlatFileItemReader">
+        <property name="resource" value="classpath:tweets.csv"/>
+        <property name="linesToSkip" value="1"/>
         <property name="lineMapper">
             <bean class="org.springframework.batch.item.file.mapping.DefaultLineMapper">
                 <property name="lineTokenizer">
                     <bean class="org.springframework.batch.item.file.transform.DelimitedLineTokenizer">
-                        <property name="names" value="id,name"/>
+                        <property name="names" value="id,user,message"/>
                     </bean>
                 </property>
                 <property name="fieldSetMapper">
                     <bean class="org.springframework.batch.item.file.mapping.BeanWrapperFieldSetMapper">
-                        <property name="prototypeBeanName" value="greeting"/>
+                        <property name="prototypeBeanName" value="tweet"/>
                     </bean>
                 </property>
             </bean>
         </property>
     </bean>
 
-    <bean id="greetingProcessor" class="springbatch.GreetingProcessor"/>
+    <bean id="tweetProcessor" class="springbatch.TweetProcessor"/>
 
-    <bean id="greetingWriter" class="springbatch.GreetingWriter"/>
+    <bean id="tweetWriter" class="springbatch.TweetWriter"/>
 
     <batch:job id="helloWorldJob">
         <batch:step id="step1">
             <batch:tasklet>
-                <batch:chunk reader="greetingReader" writer="greetingWriter" processor="greetingProcessor" commit-interval="10"/>
+                <batch:chunk reader="tweetReader" writer="tweetWriter" processor="tweetProcessor" commit-interval="10"/>
             </batch:tasklet>
         </batch:step>
     </batch:job>
