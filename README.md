@@ -7,10 +7,17 @@ This repository contains the source code for the following posts:
 
 # How to run the benchmark?
 
+This benchmark uses the following versions:
+
+* Easy Batch: 3.0.0
+* Spring Batch: 3.0.3.RELEASE
+
 First, clone the repository and build the project:
 
 `$>git clone https://github.com/benas/springbatch-vs-easybatch.git`
+
 `$>cd springbatch-vs-easybatch`
+
 `$>mvn install`
 
 1. Generate input data
@@ -19,7 +26,9 @@ The `common.CustomerGenerator` class will generate X customers in the `java.io.t
 the number of customers to generate with the following commands:
 
 `$>cd common`
+
 `$>cd target`
+
 `$>java -Dorg.easybatch.bench.count=10000 -cp "sb-vs-eb-common-1.0.jar:dependency/*" common.CustomerGenerator`
 
 This will generate a `customers.csv` file with 10000 random records in the `java.io.tmpdir` directory.
@@ -30,7 +39,9 @@ In order to launch Easy Batch application to process the previously generated cu
  proceed as follows **from the root directory** of the project:
 
 `$>cd easy-batch`
+
 `$>cd target`
+
 `$>time java -cp "sb-vs-eb-easybatch-1.0.jar:dependency/*" easybatch.EasyBatchBenchLauncher`
 
 This should print out the execution time of the application.
@@ -41,7 +52,9 @@ In order to launch Spring Batch application to process the previously generated 
  proceed as follows **from the root directory** of the project:
 
 `$>cd spring-batch`
+
 `$>cd target`
+
 `$>time java -cp "sb-vs-eb-springbatch-1.0.jar:dependency/*" springbatch.SpringBatchBenchLauncher`
 
 This should print out the execution time of the application.
