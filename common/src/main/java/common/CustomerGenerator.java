@@ -62,6 +62,7 @@ public class CustomerGenerator {
         int customersCount = Integer.parseInt(System.getProperty("org.easybatch.bench.count"));
         String customersFile = System.getProperty("java.io.tmpdir") + System.getProperty("file.separator") + "customers.csv";
         generateCsvCustomers(customersFile, customersCount);
+        System.out.println("Successfully generated " + customersCount + " random customers in " + customersFile);
     }
 
     public static void generateCsvCustomers(String customersFile, int customersCount) throws Exception {
