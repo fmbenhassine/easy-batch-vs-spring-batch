@@ -20,7 +20,7 @@ First, clone the repository and build the project:
 
 `$>mvn install`
 
-1. Generate input data
+### 1. Generate input data
 
 The `common.CustomerGenerator` class will generate X customers in the `java.io.tmpdir` directory. You can specify
 the number of customers to generate with the following commands:
@@ -33,7 +33,7 @@ the number of customers to generate with the following commands:
 
 This will generate a `customers.csv` file with 10000 random records in the `java.io.tmpdir` directory.
 
-2. Run Easy Batch application
+### 2. Run Easy Batch application
 
 In order to launch Easy Batch application to process the previously generated customers file,
  proceed as follows **from the root directory** of the project:
@@ -46,7 +46,7 @@ In order to launch Easy Batch application to process the previously generated cu
 
 This should print out the execution time of the application.
 
-3. Run Spring Batch application
+### 3. Run Spring Batch application
 
 In order to launch Spring Batch application to process the previously generated customers file,
  proceed as follows **from the root directory** of the project:
@@ -59,7 +59,7 @@ In order to launch Spring Batch application to process the previously generated 
 
 This should print out the execution time of the application.
 
-# Notes
+#### Notes
 
 If you are using MS Windows, please use the `;` classpath separator in the previous commands as follows:
 
@@ -70,6 +70,6 @@ If you are using MS Windows, please use the `;` classpath separator in the previ
 `$>time java -cp "sb-vs-eb-springbatch-1.0.jar;dependency/*" springbatch.SpringBatchBenchLauncher`
 
 Also, you need to use a command equivalent to `time` in order to measure the application execution time.
-If you have Power Shell, you can use the ``command. For example:
+If you have Power Shell, you can use the `Measure-Command` command. For example:
 
 `Measure-Command {java -cp "sb-vs-eb-easybatch-1.0.jar;dependency/*" easybatch.EasyBatchBenchLauncher}`
