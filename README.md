@@ -9,7 +9,7 @@ This repository contains the source code for the following posts:
 
 This benchmark uses the following versions:
 
-* Easy Batch: 3.0.0
+* Easy Batch: 3.0.1
 * Spring Batch: 3.0.3.RELEASE
 
 First, clone the repository and build the project:
