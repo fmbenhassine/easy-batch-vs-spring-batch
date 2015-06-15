@@ -1,0 +1,52 @@
+Hardware:
+=========
+
+Laptop: MacBook Pro (Retina, 15-inch, Late 2013)
+CPU: 2 GHz Intel Core i7
+RAM: 8 GB 1600 MHz DDR3
+DISK: 251 GB SSD Flash Storage
+
+Software
+========
+
+OS: Mac OS X Yosemite 10.10.3
+Java: version 1.7.0_67 HotSpot(TM) 64-Bit Server VM
+
+Measures
+========
+
+10.000 records (964K)
+-----------------------
+
+Easy Batch: < 1s
+
+Spring Batch (commit-interval = 10) : 3s
+Spring Batch (commit-interval = 100) : 3s
+Spring Batch (commit-interval = 1000) : 2s
+
+100.000 records (9.4M)
+------------------------
+
+Easy Batch: 1s
+
+Spring Batch (commit-interval = 10) : 10s
+Spring Batch (commit-interval = 100) : 6s
+Spring Batch (commit-interval = 1000) : 5s
+
+1.000.000 records (94M)
+-------------------------
+
+Easy Batch: 5s
+
+Spring Batch (commit-interval = 10) : 64s
+Spring Batch (commit-interval = 100) : 37s
+Spring Batch (commit-interval = 1000) : 35s
+
+10.000.000 records (938M)
+---------------------------
+
+Easy Batch: 52s
+
+Spring Batch (commit-interval = 10) : 417s
+Spring Batch (commit-interval = 100) : 343s
+Spring Batch (commit-interval = 1000) : 337s
