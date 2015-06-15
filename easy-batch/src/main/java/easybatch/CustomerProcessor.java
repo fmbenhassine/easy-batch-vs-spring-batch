@@ -10,7 +10,7 @@ import common.Customer;
 public class CustomerProcessor implements RecordProcessor<Customer, Customer> {
 
     @Override
-    public Customer processRecord(Customer customer) throws Exception {
+    public Customer processRecord(Customer customer) {
         return customer;
     }
 

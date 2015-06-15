@@ -10,7 +10,7 @@ import common.Tweet;
 public class TweetProcessor implements RecordProcessor<Tweet, Tweet> {
 
     @Override
-    public Tweet processRecord(Tweet tweet) throws Exception {
+    public Tweet processRecord(Tweet tweet) {
         System.out.println(tweet);
         return tweet;
     }

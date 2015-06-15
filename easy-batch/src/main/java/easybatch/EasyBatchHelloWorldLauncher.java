@@ -1,23 +1,20 @@
 package easybatch;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.net.URISyntaxException;
-
 import common.Tweet;
-
+import org.easybatch.core.api.Engine;
 import org.easybatch.core.filter.HeaderRecordFilter;
-import org.easybatch.core.impl.Engine;
 import org.easybatch.core.impl.EngineBuilder;
+import org.easybatch.flatfile.DelimitedRecordMapper;
 import org.easybatch.flatfile.FlatFileRecordReader;
-import org.easybatch.flatfile.dsv.DelimitedRecordMapper;
+
+import java.io.File;
 
 /**
  * Easy Batch launcher.
  */
 public class EasyBatchHelloWorldLauncher {
 
-    public static void main(String[] args) throws FileNotFoundException, URISyntaxException {
+    public static void main(String[] args) throws Exception {
 
         File tweets = new File(EasyBatchHelloWorldLauncher.class.getResource("/tweets.csv").toURI());
 

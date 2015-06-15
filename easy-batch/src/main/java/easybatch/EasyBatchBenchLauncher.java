@@ -1,21 +1,19 @@
 package easybatch;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.net.URISyntaxException;
-import org.easybatch.core.impl.Engine;
-import org.easybatch.core.impl.EngineBuilder;
-import org.easybatch.flatfile.FlatFileRecordReader;
-import org.easybatch.flatfile.dsv.DelimitedRecordMapper;
-
 import common.Customer;
+import org.easybatch.core.api.Engine;
+import org.easybatch.core.impl.EngineBuilder;
+import org.easybatch.flatfile.DelimitedRecordMapper;
+import org.easybatch.flatfile.FlatFileRecordReader;
+
+import java.io.File;
 
 /**
  * Easy Batch benchmark launcher.
  */
 public class EasyBatchBenchLauncher {
 
-    public static void main(String[] args) throws FileNotFoundException, URISyntaxException {
+    public static void main(String[] args) throws Exception {
 
         long startTime = System.currentTimeMillis();
 

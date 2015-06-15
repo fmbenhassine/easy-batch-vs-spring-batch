@@ -58,7 +58,7 @@
     <batch:job id="customerJob">
         <batch:step id="step1">
             <batch:tasklet>
-                <batch:chunk reader="customerReader" writer="customerWriter" processor="customerProcessor" commit-interval="10"/>
+                <batch:chunk reader="customerReader" writer="customerWriter" processor="customerProcessor" commit-interval="1000"/>
             </batch:tasklet>
         </batch:step>
     </batch:job>

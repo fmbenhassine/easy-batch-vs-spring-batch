@@ -7,10 +7,10 @@ This repository contains the source code for the following posts:
 
 # How to run the benchmark?
 
-This benchmark uses the following versions:
+The benchmark uses the following versions:
 
-* Easy Batch: 3.0.1
-* Spring Batch: 3.0.3.RELEASE
+* Easy Batch: 3.0.2
+* Spring Batch: 3.0.4.RELEASE
 
 First, clone the repository and build the project:
 
