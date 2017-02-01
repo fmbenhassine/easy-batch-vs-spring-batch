@@ -11,7 +11,7 @@ public class TweetProcessor implements ItemProcessor<Tweet, Tweet> {
 
     @Override
     public Tweet process(Tweet tweet) throws Exception {
-        System.out.println(tweet);
+        tweet.setMessage(tweet.getMessage().toUpperCase());
         return tweet;
     }
 
