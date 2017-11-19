@@ -57,4 +57,4 @@ Easy Batch (batch-size = 1000) : 73s
 
 Spring Batch (commit-interval = 10) : 773s
 Spring Batch (commit-interval = 100) : 424s
-Spring Batch (commit-interval = 1000) : 337s
+Spring Batch (commit-interval = 1000) : 388s
