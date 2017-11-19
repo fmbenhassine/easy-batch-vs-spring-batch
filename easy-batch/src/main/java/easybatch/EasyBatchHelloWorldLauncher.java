@@ -20,17 +20,19 @@ public class EasyBatchHelloWorldLauncher {
 
         File tweets = new File(EasyBatchHelloWorldLauncher.class.getResource("/tweets.csv").toURI());
 
-        // Build an easy batch job
+        // Build a job
         Job job = new JobBuilder()
                 .reader(new FlatFileRecordReader(tweets))
                 .filter(new HeaderRecordFilter())
-                .mapper(new DelimitedRecordMapper(Tweet.class, "id", "user", "message"))
+                .mapper(new DelimitedRecordMapper<>(Tweet.class, "id", "user", "message"))
                 .processor(new TweetProcessor())
                 .writer(new StandardOutputRecordWriter())
                 .build();
 
-        // Run easy batch job
-        JobExecutor.execute(job);
+        // Run the job
+        JobExecutor jobExecutor = new JobExecutor();
+        jobExecutor.execute(job);
+        jobExecutor.shutdown();
 
     }
 
