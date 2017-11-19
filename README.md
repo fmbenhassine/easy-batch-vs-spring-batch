@@ -25,7 +25,7 @@ First, clone the repository and build the project:
 The `common.CustomerGenerator` class will generate X customers in the `java.io.tmpdir` directory. You can specify
 the number of customers to generate with the following commands:
 
-`$>cd common/cd target`
+`$>cd common/target`
 
 `$>java -Dorg.easybatch.bench.count=10000 -cp "sb-vs-eb-common-1.0.jar:dependency/*" common.CustomerGenerator`
 
