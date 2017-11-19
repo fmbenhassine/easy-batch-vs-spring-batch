@@ -16,11 +16,8 @@ public class SpringBatchBenchLauncher {
         long startTime = System.currentTimeMillis();
 
         ApplicationContext context = new ClassPathXmlApplicationContext("customer-job.xml");
-
         JobLauncher jobLauncher = (JobLauncher) context.getBean("jobLauncher");
-
         Job job = (Job) context.getBean("customerJob");
-
         jobLauncher.run(job, new JobParameters());
 
         long elapsedTime  = System.currentTimeMillis() - startTime;
