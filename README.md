@@ -2,8 +2,8 @@
 
 This repository contains the source code for the following posts:
 
-* [Spring Batch Vs Easy Batch: Features Comparison](http://benas.github.io/2014/03/03/spring-batch-vs-easy-batch-a-hello-world-comparison.html)
-* [Spring Batch Vs Easy Batch: Performance Comparison](http://benas.github.io/2015/02/15/spring-batch-vs-easy-batch-a-performance-comparison.html)
+* [Spring Batch Vs Easy Batch: Feature comparison](http://benas.github.io/2014/03/03/spring-batch-vs-easy-batch-feature-comparison.html)
+* [Spring Batch Vs Easy Batch: Performance comparison](http://benas.github.io/2015/02/15/spring-batch-vs-easy-batch-performance-comparison.html)
 
 # How to run the benchmark?
 
